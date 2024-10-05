@@ -10,12 +10,13 @@ Array.from(deleteBtn).forEach(el =>{
 
 async function deleteHabit(){
     const habitId = this.parentNode.parentNode.dataset.id
+    
     console.log(habitId)
     
     try {
         const response = await fetch('habits/deleteHabit', {
             method: 'delete',
-            headers: {'Content-type': 'application.json'},
+            headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
                 'habitId' : habitId
             })

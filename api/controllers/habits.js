@@ -26,7 +26,7 @@ module.exports = {
     deleteHabit: async (req, res)=>{
         console.log({_id: req.body.habitId})
         try{
-            await Habits.findOneAndDelete(req.body.habitId)
+            await Habits.findOneAndDelete({_id:req.body.habitId})
             console.log(`Deleted ${req.body.habitId}`)
             res.json('Deleted It')
         }catch(err){
